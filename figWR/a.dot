@@ -1,0 +1,48 @@
+// Copyright (c) 2017 wangren
+// 
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+
+
+digraph {
+
+// label="Flow chart of the Index Script"
+n1[label="Application awake",shape="box", style=""]
+n2[label="Configuration: \nAudio sources \nHardware access \nMemory allocation",shape="box", style=""]
+n21[label="",shape="point", style=""]
+n3[label="Create either \nMatcher or Scaler \nSound track",shape="box", style=""]
+n31[label="",shape="point",style=""]
+n4[label="\"Start\" Pressed",shape="diamond", style=""]
+n5[label="Recording \nAcceleration data",shape="box", style=""]
+n6[label="\"End\" Pressed",shape="box", style=""]
+n7[label="Different Function",shape="diamond", style=""]
+n8[label="Scaler algorithm",shape="box", style=""]
+n9[label="Matcher algorithm",shape="box", style=""]
+n10[label="Sound score Created",shape="box", style=""]
+n11[label="Play Music",shape="box", style=""]
+
+n1->n2
+
+n2->n21
+n21->n3
+
+n3->n31
+n31->n4
+
+n4->n5[label="Yes"]
+n4->n21[label="No"] 
+
+n5->n6
+n6->n7
+
+n7->n8
+n7->n9
+
+n8->n10
+n9->n10
+
+n10->n11
+n11 -> n31[label=" Loop back"]
+ 
+}
