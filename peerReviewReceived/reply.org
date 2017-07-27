@@ -1,16 +1,17 @@
 * Review message from other group
-** comment in text [38%]
+** comment in text [44%]
 *** TODO JI Logo Team Logo
 *** TODO Need to clarify the audience
 *** TODO Need to strengthen the relationship between needs and audience
 *** TODO Need to state material
 *** TODO Need to take care of messy code
-*** TODO Need to take care of the usage of bullet point(no logic sequence) and numerical point(logic sequence). 
+*** DONE Need to take care of the usage of bullet point(no logic sequence) and numerical point(logic sequence). 
+    CLOSED: [2017-07-27 Thu 13:27]
 *** DONE Put objectives before solution
     CLOSED: [2017-07-27 Thu 13:18]
 *** DONE Split the graphs.
     CLOSED: [2017-07-27 Thu 13:10]
-*** DONE It’s better to put figures right below corresponding texts.   (\begin{figure}[H])
+*** DONE It’s better to put figures right below corresponding texts.  
     CLOSED: [2017-07-27 Thu 13:10]
 *** TODO Difficulties should be specified in the tasks section.
 *** TODO No pictures or visuals of the hardware mentioned.
