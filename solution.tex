@@ -12,9 +12,9 @@
    map the acceleration data into float point value between 0 to 5. 
 
    After that, the acceleration data will be processed through one of the
-   following function, which are the Matcher and the Scaler. 
+   following function, which are the \textbf{Matcher} and the \textbf{Scaler}. 
 
-   After the the process of Matcher or Scaler function, one sound track is
+   After the the process of \textbf{Matcher} or \textbf{Scaler} function, one sound track is
    created and finally the multiple sound tracks are mixed into the final audio.
 
 \subsubsection{Index Script}
@@ -37,7 +37,7 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
 
 \subsubsection{Scaler algorithm}
 
-   For the scaler part, also suppose we have the acceleration data.
+   For the \textbf{Scaler} part, also suppose we have the acceleration data.
    Then we separate them into 10 time intervals equally.
    And we find the max value in each interval.
    Then the ruler is created based on the max value and the min value of the
@@ -47,7 +47,7 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
    Fill in the blank and finally a music score is created and it produces one
    sound track.
 
-   The visual of the scaler process is shown by step in Figure~\ref{scalerStep0}
+   The visual of the \textbf{Scaler} process is shown by step in Figure~\ref{scalerStep0}
    to Figure~\ref{scalerStep2}. 
 
 \begin{figure}[H]
@@ -77,17 +77,18 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
 
 \subsubsection{Matcher algorithm}
 
-   For the matcher part, suppose we have the acceleration data,
+   For the \textbf{Matcher} part, suppose we have the acceleration data,
    then we compared it with three pre-configured answers,
    calculate the difference between answers and real data.
    The one that has the least sum of absolute value is the audio clip we select.
    Then the corresponding sound track is created.
 
-   The visual of the matcher process is shown in Figure~\ref{matcherStep0} and Figure~\ref{matcherStep1}.
+   The visual of the \textbf{Matcher} process is shown in Figure~\ref{matcherStep0} and Figure~\ref{matcherStep1}.
 
+
+\newcommand{\widthOfMatcherFigure}{10cm}
 \begin{figure}[H]
 \centering
-\newcommand{\widthOfMatcherFigure}{8cm}
 \includegraphics[width=\widthOfMatcherFigure]{figWR/matcher1}
 \caption{Matcher Process, Wrong music}
 \label{matcherStep0}
@@ -95,7 +96,6 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
 
 \begin{figure}[H]
 \centering
-\newcommand{\widthOfMatcherFigure}{8cm}
 \includegraphics[width=\widthOfMatcherFigure]{figWR/matcher2}
 \caption{Matcher Process, Right music}
 \label{matcherStep1}
