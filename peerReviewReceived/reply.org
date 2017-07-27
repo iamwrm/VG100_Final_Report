@@ -20,7 +20,7 @@
 *** TODO (Figure3) Can be enlarged.
 *** TODO More detail mistakes are shown in the figures follows:
 
-** commnet in the pictures [60%]
+** commnet in the pictures [83%]
 *** DONE CAP for unity name
     CLOSED: [2017-07-27 Thu 12:31]
 *** DONE "Processor" is vague
@@ -30,5 +30,9 @@
 *** DONE explain main loop 
     CLOSED: [2017-07-27 Thu 12:44]
     Added "the loop in which the program will be in after initial setup"
-*** TODO wrong punctuation
-
+*** DONE wrong punctuation "function,  matcher,scaler"
+    CLOSED: [2017-07-27 Thu 12:50]
+    changed into "which are"
+*** DONE "physical part" not technical
+    CLOSED: [2017-07-27 Thu 12:53]
+    change to gyroscope speaker

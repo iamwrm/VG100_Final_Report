@@ -13,18 +13,18 @@ raw data.
    map the acceleration data into float point value between 0 to 5. 
 
    After that, the acceleration data will be processed through one of the
-   following function, matcher and scaler. 
+   following function, which are the Matcher and the Scaler. 
 
    After the the process of Matcher or Scaler function, one sound track is created and finally the multiple
    sound tracks are mixed into the final audio. 
 
 \subsubsection{Index Script}
 
-The index script is the one that Unity Engine recognize and hand over its
-control to. 
-Thus, we use the index script to get access to the \textbf{physical} part of the
-mobile phone, ask for \textbf{memory}, create \textbf{main loop}(the loop in which the program will be in after initial setup), and call for
-\textbf{matcher} and \textbf{scaler} functions.
+The Unity Engine first recognize the index script and hand over its control to it. 
+Thus, we use the index script to get access to the 
+\textbf{gyroscope}, \textbf{speaker} of the mobile phone, 
+ ask for \textbf{memory}, create \textbf{main loop} (the loop in which the program will be in after initial setup), and call for
+\textbf{Matcher} and \textbf{Scaler} functions.
 The flow chart of the index script is shown in Figure~\ref{indexScript}.
 
 \begin{figure}[htbp]
