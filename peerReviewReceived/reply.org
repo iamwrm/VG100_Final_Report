@@ -20,11 +20,15 @@
 *** TODO (Figure3) Can be enlarged.
 *** TODO More detail mistakes are shown in the figures follows:
 
-** commnet in the pictures [33%]
+** commnet in the pictures [60%]
 *** DONE CAP for unity name
     CLOSED: [2017-07-27 Thu 12:31]
-*** TODO "Processor" is vague
+*** DONE "Processor" is vague
+    CLOSED: [2017-07-27 Thu 12:41]
+    Changed into "the process of Matcher or Scaler function" 
 *** TODO visual of the hardware
-
-
+*** DONE explain main loop 
+    CLOSED: [2017-07-27 Thu 12:44]
+    Added "the loop in which the program will be in after initial setup"
+*** TODO wrong punctuation
 
