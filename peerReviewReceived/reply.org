@@ -1,12 +1,13 @@
 * Review message from other group
-** comment in text [31%]
+** comment in text [38%]
 *** TODO JI Logo Team Logo
 *** TODO Need to clarify the audience
 *** TODO Need to strengthen the relationship between needs and audience
 *** TODO Need to state material
 *** TODO Need to take care of messy code
 *** TODO Need to take care of the usage of bullet point(no logic sequence) and numerical point(logic sequence). 
-*** TODO Put objectives before solution
+*** DONE Put objectives before solution
+    CLOSED: [2017-07-27 Thu 13:18]
 *** DONE Split the graphs.
     CLOSED: [2017-07-27 Thu 13:10]
 *** DONE It’s better to put figures right below corresponding texts.   (\begin{figure}[H])
