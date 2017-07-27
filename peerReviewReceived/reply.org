@@ -20,7 +20,7 @@
 *** TODO (Figure3) Can be enlarged.
 *** TODO More detail mistakes are shown in the figures follows:
 
-** commnet in the pictures [83%]
+** commnet in the pictures [66%]
 *** DONE CAP for unity name
     CLOSED: [2017-07-27 Thu 12:31]
 *** DONE "Processor" is vague
@@ -36,3 +36,8 @@
 *** DONE "physical part" not technical
     CLOSED: [2017-07-27 Thu 12:53]
     change to gyroscope speaker
+*** TODO not accurate in explanation of 7 tones in music
+*** DONE don't omit "do re mi..."
+    CLOSED: [2017-07-27 Thu 12:55]
+    change into whole
+*** TODO give visual of the ruler
