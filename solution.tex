@@ -83,15 +83,22 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
    The one that has the least sum of absolute value is the audio clip we select.
    Then the corresponding sound track is created.
 
-   The visual of the matcher process is shown in Figure~\ref{matcherStep}.
+   The visual of the matcher process is shown in Figure~\ref{matcherStep0} and Figure~\ref{matcherStep1}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \newcommand{\widthOfMatcherFigure}{8cm}
 \includegraphics[width=\widthOfMatcherFigure]{figWR/matcher1}
+\caption{Matcher Process, Wrong music}
+\label{matcherStep0}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\newcommand{\widthOfMatcherFigure}{8cm}
 \includegraphics[width=\widthOfMatcherFigure]{figWR/matcher2}
-\caption{Matcher Process}
-\label{matcherStep}
+\caption{Matcher Process, Right music}
+\label{matcherStep1}
 \end{figure}
 
 \subsubsection{Mixer}
