@@ -1,0 +1,30 @@
+* Review message from other group
+** comment in text [0%]
+*** TODO JI Logo Team Logo
+*** TODO Need to clarify the audience
+*** TODO Need to strengthen the relationship between needs and audience
+*** TODO Need to state material
+*** TODO Need to take care of messy code
+*** TODO Need to take care of the usage of bullet point(no logic sequence) and numerical point(logic sequence). 
+*** TODO Put objectives before solution
+*** TODO Split the graphs.
+*** TODO It’s better to put figures right below corresponding texts.   (\begin{figure}[H])
+*** TODO Difficulties should be specified in the tasks section.
+*** TODO No pictures or visuals of the hardware mentioned.
+*** TODO Highlight the key terms that belong to you like “matcher”.
+*** TODO (In 6.1.1 “After the process”)(“process”) device or the process. Best to keep diagrams close when referring to them.
+*** TODO (6.1.2) What is the main loop?
+*** TODO (6.1.2)(...the physical part of the mobile part of ...) Can be more technical here to give a stronger argument.
+*** TODO (6.1.3)(Fill the blank and finally) Give more details and words to be clear.
+*** TODO (Page6 figure2) No labels for diagrams
+*** TODO (Figure3) Can be enlarged.
+*** TODO More detail mistakes are shown in the figures follows:
+
+** commnet in the pictures [33%]
+*** DONE CAP for unity name
+    CLOSED: [2017-07-27 Thu 12:31]
+*** TODO "Processor" is vague
+*** TODO visual of the hardware
+
+
+
