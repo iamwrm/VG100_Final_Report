@@ -1,0 +1,51 @@
+* Review message from other group
+** comment in text [44%]
+*** TODO JI Logo Team Logo
+*** TODO Need to clarify the audience
+*** TODO Need to strengthen the relationship between needs and audience
+*** TODO Need to state material
+*** TODO Need to take care of messy code
+*** DONE Need to take care of the usage of bullet point(no logic sequence) and numerical point(logic sequence). 
+    CLOSED: [2017-07-27 Thu 13:27]
+*** DONE Put objectives before solution
+    CLOSED: [2017-07-27 Thu 13:18]
+*** DONE Split the graphs.
+    CLOSED: [2017-07-27 Thu 13:10]
+*** DONE It’s better to put figures right below corresponding texts.  
+    CLOSED: [2017-07-27 Thu 13:10]
+*** TODO Difficulties should be specified in the tasks section.
+*** TODO No pictures or visuals of the hardware mentioned.
+*** DONE Highlight the key terms that belong to you like “matcher”.
+    CLOSED: [2017-07-27 Thu 13:13]
+*** TODO (In 6.1.1 “After the process”)(“process”) device or the process. Best to keep diagrams close when referring to them.
+*** DONE (6.1.2) What is the main loop?
+    CLOSED: [2017-07-27 Thu 13:13]
+    explained
+*** TODO (6.1.2)(...the physical part of the mobile part of ...) Can be more technical here to give a stronger argument.
+*** TODO (6.1.3)(Fill the blank and finally) Give more details and words to be clear.
+*** DONE (Page6 figure2) No labels for diagrams
+    CLOSED: [2017-07-27 Thu 13:14]
+*** DONE (Figure3) Can be enlarged.
+    CLOSED: [2017-07-27 Thu 13:15]
+
+** commnet in the pictures [66%]
+*** DONE CAP for unity name
+    CLOSED: [2017-07-27 Thu 12:31]
+*** DONE "Processor" is vague
+    CLOSED: [2017-07-27 Thu 12:41]
+    Changed into "the process of Matcher or Scaler function" 
+*** TODO visual of the hardware
+*** DONE explain main loop 
+    CLOSED: [2017-07-27 Thu 12:44]
+    Added "the loop in which the program will be in after initial setup"
+*** DONE wrong punctuation "function,  matcher,scaler"
+    CLOSED: [2017-07-27 Thu 12:50]
+    changed into "which are"
+*** DONE "physical part" not technical
+    CLOSED: [2017-07-27 Thu 12:53]
+    change to gyroscope speaker
+*** TODO not accurate in explanation of 7 tones in music
+*** DONE don't omit "do re mi..."
+    CLOSED: [2017-07-27 Thu 12:55]
+    change into whole
+*** TODO give visual of the ruler

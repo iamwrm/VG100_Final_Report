@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+reply.tex
+*.html
+reply.el
+=======
+*.html
+*.tex
+*.el
+>>>>>>> ad99419b715bbf494544232722ce4e4af742c298
+=======
+*.html
+*.tex
+*.el
+>>>>>>> ad99419b715bbf494544232722ce4e4af742c298

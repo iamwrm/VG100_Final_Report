@@ -8,7 +8,7 @@
 digraph {
 
 // label="Flow chart of the Index Script"
-n1[label="Application awake",shape="box", style=""]
+n1[label="Application Start",shape="box", style=""]
 n2[label="Configuration: \nAudio sources \nHardware access \nMemory allocation",shape="box", style=""]
 n21[label="",shape="point", style=""]
 n3[label="Create either \nMatcher or Scaler \nSound track",shape="box", style=""]
