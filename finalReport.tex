@@ -16,21 +16,30 @@
 
 \begin{document}
 
-%page 1
-\vspace*{3em}
 \begin{center}
+\includegraphics[width=10cm]{JILOGO}
+\end{center}
+
+%page 1
+\begin{center}
+    \vspace{1em}
 {\rule{11cm}{0.01cm} \\ \tiny~
 \\ \large \sc{UM--SJTU ~Joint Institute \\ \tiny ~
 \\ \large Introduction to Engineering \\ \tiny ~ 
 \\ \large VG100 \\ \tiny ~}
 \rule{11cm}{0.01cm}  
-\vspace*{3.5em}
-\\  \large\sc{Final Report on Project 2 \\ \tiny ~ \\ \huge Motion Tuner\\ ~ \\ \Large Group 3 Trinity}}
+\vspace*{1.5em}
+\\  \large\sc{Final Report on Project 2 \\ \tiny ~ \\ \huge Motion Tuner\\ ~ \\ 
+\includegraphics[width=6cm]{Logo}\\
+\Large Group 3 Trinity}}\\
+
 \end{center}
 
+
 \normalsize
-\vspace*{10em}
+\vspace*{0.5em}
 \begin{center}
+    \large
 \begin{tabular}{cl}
 \large
 \vspace{0.3em} Xie Shuxiang&516370910070\vspace{0.3em}\\ 
@@ -59,88 +68,33 @@ Professor\hspace{0.5em} &\hspace{0.5em}Cynthia Vagnetti \hspace{0.5em}&\hspace{0
 \end{tabular}
 \end{center}
 
+\input{Summary}
 
-%page1.5 mulu
+\input{Acknowledge}
+
+
 \newpage
 \tableofcontents
 
+\input{Introduction}
 
-%%%%%%%%
-%\newpage
-\section{Executive Summary}
+\input{Problems}
 
+\input{need}
 
-%%%%%%
-%\newpage
-\section{Acknowledgement}
-
-
-%%%%%
-%\newpage
-\section{Introduction}
-
-%%%%%%
-%\newpage
-\section{Problem}
-\subsection{Statement of the problem}
-\hspace*{2em}Many citizens find themselves under the pressure over moderate and too busy to pursue for happiness. They are in unhealthy mental conditions but lack for convenient ways to get happiness. People have tried to get happiness since the happiness lesson in Haward, aiming to teach people to be happy, has become one of the most popular courses. According to China Daily, many high school students find themselves under high pressure. Even though they want to do some exercise sometimes, the space is limited.\\
-\hspace*{2em}We choose dance to help people relax because it is convenient and low cost. Compared to other healthy relaxing ways like jogging and walking, dancing can be indoors, not influenced by the weather or the air pollution. The cost for dance is quite low. Traditional dancing machines takes too much space and not suitable for work places and study rooms. What?s more, this kind of machines is unfriendly for dancing beginners.\\
-�\hspace*{2em}As a result, traditional dancing machine cannot provide users with anytime and anywhere dance. \\
-\subsection{Summary of the problem}
-\hspace*{2em}In summary, people need ways to relax because they are busy and under pressure. Dance can help people to get happiness, but traditional dancing machine exists these problems:
-\begin{enumerate}[\hspace*{3em}(1)  ]
-\item Too much space
-\item Unavailable in most places
-\item Difficult for beginners
-\end{enumerate}
-
-%%%%%%%
-\section{Need and Validation}
-\subsection{Needs}
-\hspace*{2em}Our product is to provide people with convenient ways to get happiness.
-\hspace*{2em}To make our product convenient, the device should meet the needs of:
-\begin{enumerate}[\hspace*{3em}(1)]
-\item Portable: The device should be able to be carried anywhere, like an App or a bracelet
-\item Low cost: The price should not be a burden for most people
-\item Multi-function: There should be more than one kinds of motion detected and more than one types of music produced.
-\end{enumerate}
-\hspace*{2em}There are also some constrains:
-\begin{enumerate}[\hspace*{3em}(1)]
-\item Database: To make different functions, we need to build a large database to analyze, which may be too large for an iphone.
-\item Budget: Smaller the chip, higher the price.
-\end{enumerate}
-\subsection{Validation}
-\hspace*{2em}Our device can meet with the criteria:
-\begin{enumerate}[\hspace*{3em}(1)]
-\item For portable, our chip is only 1mm*1.5mm, which can be put into a bracelet.
-\item For affordable, our device is only 130 RMB, which is only one thirds of the prices of dancing machines and one tenths of the prices of motion detectors in the market.  So, it will be affordable for most people. 
-\item For multi-function, our chip will transmit 9 groups of acceleration per second, quickly enough for detecting motions and creating music. We also simplify 9 numbers to 1 to save space.
-\end{enumerate}
-
-%%%%%%
 \input{solution}
-%%%%%%%%%%
-%\newpage
+
 \input{objectives}
-%%%%%%%
-%\newpage
-\section{Tasks}
 
-%%%%%%%
-%\newpage
-\section{Schedule}
+\input{task}
 
-%%%%%
-%\newpage
-\section{Budget}
+\input{Schedule}
+
+\input{Budget}
+
+\input{Keypersonnel}
 
 
-%%%%%%
-%\newpage
-\section{Key Personnel}
-
-%%%%%
-\newpage
 \section{Conclusion}
 \subsection{Current Achievement}
 \hspace*{2em}Our product, motion tuner is able to detect users? motion and play corresponding music. The key part to achieve this goal is to analyze users? acceleration and create music with corresponding volume and tone. First, it transmits the information of uses? motion to terminals with the help of sensors. Then it analyzes the raw data from sensors and filters acceleration by serial protocol. Finally, it compares the acceleration with pre-set standards and creates matched sound tracks with acceleration. To create final audio, it is also able to mix different sound tracks to make music fluent. \\
