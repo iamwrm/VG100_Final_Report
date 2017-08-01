@@ -14,8 +14,9 @@
    After that, the acceleration data will be processed through one of the
    following function, which are the \textbf{Matcher} and the \textbf{Scaler}. 
 
-   After the the process of \textbf{Matcher} or \textbf{Scaler} function, one sound track is
-   created and finally the multiple sound tracks are mixed into the final audio.
+   After the the process of \textbf{Matcher} or \textbf{Scaler} function, one
+   sound track is created and finally the multiple sound tracks are mixed into
+   the final audio. 
 
 \subsubsection{Index Script}
 
@@ -47,8 +48,8 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
    Fill in the blank and finally a music score is created and it produces one
    sound track.
 
-   The visual of the \textbf{Scaler} process is shown by step in Figure~\ref{scalerStep0}
-   to Figure~\ref{scalerStep2}. 
+   The visual of the \textbf{Scaler} process is shown by step in
+   Figure~\ref{scalerStep0} to Figure~\ref{scalerStep2}.  
 
 \begin{figure}[H]
 \centering
@@ -83,7 +84,8 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
    The one that has the least sum of absolute value is the audio clip we select.
    Then the corresponding sound track is created.
 
-   The visual of the \textbf{Matcher} process is shown in Figure~\ref{matcherStep0} and Figure~\ref{matcherStep1}.
+   The visual of the \textbf{Matcher} process is shown in
+   Figure~\ref{matcherStep0} and Figure~\ref{matcherStep1}. 
 
 
 \newcommand{\widthOfMatcherFigure}{10cm}
@@ -113,7 +115,7 @@ because when users dance, cellphones in hands are not safe enough. Cellphones
 might be thrown out and hurt someone and then be broken. Moreover, the
 cellphones are too heavy to carry when doing some fierce action. So developing a
 safer and lighter bracelet is necessary. The second part of our product can
-exactly satisfy the needs.  
+exactly satisfy the needs. 
 
 The second part consists of a bracelet and a PC terminal. The bracelet contains
 the sensor JY901, the bluetooth module and batteries. More specifically, the
@@ -124,7 +126,7 @@ mainly does the analyzing and generating jobs. The software on PC terminal
 developed by Unity3D can apply several different algorithm to analyze the data,
 so that the origin motion kind of the users can be defined. Then by comparing
 different conditions prepared previously, the software can mix and play all
-kinds audio source.   
+kinds audio source. 
 
 
 \subsubsection{Hardware}
@@ -144,11 +146,59 @@ following characteristics:
 \item Support software development. 
 \end{itemize}
 \paragraph{Bluetooth Module}
+
+It is connected with the JY901 sensor used for data transmission. In the serial
+protocol, the bluetooth plays a role of an imaginary COM port whose name is
+“COM6” on the Windows platform. 
+
+
 \paragraph{Battery}
+
+We use two chargeable batteries to power both JY901 sensor and the bluetooth
+module. Each battery’s size is about 1cm*2cm*0.3cm which is very small. However,
+each battery can provide 3.3V voltage and about 200 mAh electric charge. Since
+the consumption of sensor JY901 is very small, the battery’s life is able to
+ensure the normal work of our product. 
+
+
 \paragraph{Fabrication}
 \subsubsection{Software}
 \paragraph{Data collection algorithm (same with the Mobile terminal part)}
 \paragraph{Data transmission algorithm}
+
+Programming Language: C\#
+
+Input: All kinds of data collected by the sensor JY901, including acceleration,
+angular acceleration, temperature and so on in 16 hexadecimal.   
+
+ Output: Acceleration readings of three axises in 10 hexadecimal. 
+
+ Algorithm: The algorithm includes mainly two functions which are''
+ ``ReceiveData()'' and'' ``ReadData()'' and they each has their own thread. In
+ the initialization part “void Update()” function, we create and open two
+ threads one by one which can ensure that the data path is clear and efficient.
+
+ Then in function ``ReceiveData()'', an empty string and a buffer byte are
+ created to store and transport the data collected. Since the “55” in 16
+ hexadecimal equals to “85” in 10 hexadecimal and all the data we need starts
+ with “55” in 16 hexadecimal, the “if” sentences are applied. After all the
+ suitable datas have been collected, we add the string to the queue created as a
+ data pool using the order “queueDataPool.Enqueue(string)”. 
+
+ In function ``ReadData()'', we first use the thread different from the previous
+ one. All the data source in the part are from the queue acting as data pool.
+ Here another buffer is created to store the data read out of the queue. We read
+ data out one by one, when the length of the buffer reaches 22 which is the
+ length we need, the buffer will be stored as formal data and then be cleared.
+ Please note that since in the “ReceiveData” part we already judge what kind of
+ data to collect, in the queue the data should starts with “85” in 10
+ hexadecimal and we don’t need to set conditions again. Then there is the
+ calculation part, take the data starts with “5551” in 16 hexadecimal as
+ example. After “5551” the three axises accelerations are stored in two digits.
+ The data format of the queue is “string”, so we need to transform data which is
+ “string in 16 hexadecimal” to “int in 10 hexadecimal”. The function
+ “Int16.Parse(stroutpool[4].ToString(),System.Globalization.NumberStyles.AllowHexSpecifier)” 
+ is applied. Thus we can calculate the accelerations out one by one.  
 \paragraph{Data analysis algorithm (same with the Mobile terminal part)}
 \paragraph{Audio source generating algorithm (same with the Mobile terminal
   part)} 
