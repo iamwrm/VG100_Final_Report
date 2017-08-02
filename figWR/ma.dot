@@ -7,42 +7,88 @@
 
 digraph {
 
+
+graph[overlap=false]
+
+edge[dir=none,overlap=false]
+
 // label="Flow chart of the Index Script"
-n1[label="Application Start",shape="box", style=""]
-n2[label="Configuration: \nAudio sources \nHardware access \nMemory allocation",shape="box", style=""]
-n21[label="",shape="point", style=""]
-n3[label="Create either \nMatcher or Scaler \nSound track",shape="box", style=""]
-n31[label="",shape="point",style=""]
-n4[label="\"Start\" Pressed",shape="diamond", style=""]
-n5[label="Recording \nAcceleration data",shape="box", style=""]
-n6[label="\"End\" Pressed",shape="box", style=""]
-n7[label="Different Function",shape="diamond", style=""]
-n8[label="Scaler algorithm",shape="box", style=""]
-n9[label="Matcher algorithm",shape="box", style=""]
-n10[label="Sound score Created",shape="box", style=""]
-n11[label="Play Music",shape="box", style=""]
+input[label="",shape="none"]
 
-n1->n2
+acc[label="Acceleration Data Input",shape="box",style=""]
 
-n2->n21
-n21->n3
+dot11[label="",shape=circle,style="",height=0.01,width=0.01]
+dot12[label="",shape=circle,style="",height=0.01,width=0.01]
+dot13[label="",shape=circle,style="",height=0.01,width=0.01]
 
-n3->n31
-n31->n4
 
-n4->n5[label="Yes"]
-n4->n21[label="No"] 
+dot21[label="",shape=circle,style="",height=0.01,width=0.01]
+dot22[label="",shape=circle,style="",height=0.01,width=0.01]
+dot23[label="",shape=circle,style="",height=0.01,width=0.01]
+dot24[label="",shape=circle,style="",height=0.01,width=0.01]
+dot25[label="",shape=circle,style="",height=0.01,width=0.01]
+dot26[label="",shape=circle,style="",height=0.01,width=0.01]
 
-n5->n6
-n6->n7
+dot31[label="",shape=circle,style="",height=0.01,width=0.01]
+dot32[label="",shape=circle,style="",height=0.01,width=0.01]
+dot33[label="",shape=circle,style="",height=0.01,width=0.01]
+dot34[label="",shape=circle,style="",height=0.01,width=0.01]
+dot35[label="",shape=circle,style="",height=0.01,width=0.01]
+dot36[label="",shape=circle,style="",height=0.01,width=0.01]
+dot37[label="",shape=circle,style="",height=0.01,width=0.01]
+dot38[label="",shape=circle,style="",height=0.01,width=0.01]
+dot39[label="",shape=circle,style="",height=0.01,width=0.01]
+dot310[label="",shape=circle,style="",height=0.01,width=0.01]
+dot311[label="",shape=circle,style="",height=0.01,width=0.01]
+dot312[label="",shape=circle,style="",height=0.01,width=0.01]
 
-n7->n8
-n7->n9
 
-n8->n10
-n9->n10
+input->acc
 
-n10->n11
-n11 -> n31[label=" Loop back"]
- 
+acc->dot12[dir=none]
+
+{rank=same;dot13->dot12->dot11[dir=none]}
+
+dot11->dot22[dir=none]
+dot13->dot25[dir=none]
+
+{
+rank=same;
+dot21->dot22->dot23
+dot24->dot25->dot26
+}
+
+dot21->dot32
+dot23->dot35
+dot24->dot38
+dot26->dot311
+
+{
+	rank=same
+	dot31->dot32->dot33
+	dot34->dot35->dot36
+	dot37->dot38->dot39
+	dot310->dot311->dot312
+}
+
+dot31->result1
+dot33->result2
+dot34->result3
+dot36->result4
+dot37->result5
+dot39->result6
+dot310->result7
+dot312->result8
+
+
+result1[label="Do",shape=box]
+result2[label="Re",shape=box]
+result3[label="Do",shape=box]
+result4[label="Do",shape=box]
+result5[label="Do",shape=box]
+result6[label="Do",shape=box]
+result7[label="Do",shape=box]
+result8[label="Do",shape=box]
+
+
 }
