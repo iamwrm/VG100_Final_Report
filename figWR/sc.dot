@@ -7,42 +7,45 @@
 
 digraph {
 
-// label="Flow chart of the Index Script"
-n1[label="Application Start",shape="box", style=""]
-n2[label="Configuration: \nAudio sources \nHardware access \nMemory allocation",shape="box", style=""]
-n21[label="",shape="point", style=""]
-n3[label="Create either \nMatcher or Scaler \nSound track",shape="box", style=""]
-n31[label="",shape="point",style=""]
-n4[label="\"Start\" Pressed",shape="diamond", style=""]
-n5[label="Recording \nAcceleration data",shape="box", style=""]
-n6[label="\"End\" Pressed",shape="box", style=""]
-n7[label="Different Function",shape="diamond", style=""]
-n8[label="Scaler algorithm",shape="box", style=""]
-n9[label="Matcher algorithm",shape="box", style=""]
-n10[label="Sound score Created",shape="box", style=""]
-n11[label="Play Music",shape="box", style=""]
+node[shape=box]
+graph [ nodesep=1]
 
-n1->n2
 
-n2->n21
-n21->n3
 
-n3->n31
-n31->n4
+start[label="Acceleration Data Input (List)"]
 
-n4->n5[label="Yes"]
-n4->n21[label="No"] 
+start->c0
 
-n5->n6
-n6->n7
+c0 [label="Step = (Max(Data) - Min(Data))/ Step Number "]
 
-n7->n8
-n7->n9
+c0->mid1[dir=none]
 
-n8->n10
-n9->n10
+c1[label="For each time period,\n Find max acceleration"]
 
-n10->n11
-n11 -> n31[label=" Loop back"]
+c1->c2
+
+c2[label="Score = (Max(PartData) - Min(Data)) / Step"]
+
+
+c2->mid2[dir=none]
+
+
+mid2->mid4[dir=none]
+
+
+{mid4->mid1[label=" Loop back"]}
+
+mid2[shape=circle,width=0.01,height=0.01,label=""]
+
+mid1->c1
+
+mid1[shape=circle,width=0.01,height=0.01,label=""]
+mid4[shape=circle,width=0.01,height=0.01,label=""]
+
+
+mid4->end
+
+end[label="Store Score"]
+
  
 }

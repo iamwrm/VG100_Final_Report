@@ -12,9 +12,6 @@ graph [ nodesep=1]
 
 // label="Flow chart of the Index Script"
 
-realstart-> start
-
-realstart[label="",shape=none]
 
 start[label="Acceleration Data Input"]
 
@@ -61,11 +58,6 @@ play[label="Play Sound"]
 play -> store
 
 store[label="Store Score"]
-
-store-> end
-
-end[shape=none,label=""]
-
 
 
 
