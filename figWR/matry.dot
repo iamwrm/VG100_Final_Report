@@ -1,0 +1,17 @@
+// Copyright (c) 2017 wangren
+// 
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+
+
+digraph a{
+
+node [shape=record];
+
+start
+struct3 [shape=record,label="<1>a|<2>b|c"];
+start -> struct3:1;
+start -> struct3:2;
+
+}

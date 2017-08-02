@@ -5,90 +5,46 @@
 
 
 
-digraph {
+digraph a {
+node[shape=record]
 
-
-graph[overlap=false]
-
-edge[dir=none,overlap=false]
+graph [nodesep=1]
 
 // label="Flow chart of the Index Script"
-input[label="",shape="none"]
+start[label="Acceleration Data Input"]
 
-acc[label="Acceleration Data Input",shape="box",style=""]
+c1[label="Compare the acceleration\n in x, y, z direction with 0"]
 
-dot11[label="",shape=circle,style="",height=0.01,width=0.01]
-dot12[label="",shape=circle,style="",height=0.01,width=0.01]
-dot13[label="",shape=circle,style="",height=0.01,width=0.01]
+start->c1
 
+c2 [label="Get 8 conditions"]
 
-dot21[label="",shape=circle,style="",height=0.01,width=0.01]
-dot22[label="",shape=circle,style="",height=0.01,width=0.01]
-dot23[label="",shape=circle,style="",height=0.01,width=0.01]
-dot24[label="",shape=circle,style="",height=0.01,width=0.01]
-dot25[label="",shape=circle,style="",height=0.01,width=0.01]
-dot26[label="",shape=circle,style="",height=0.01,width=0.01]
+c1->c2
 
-dot31[label="",shape=circle,style="",height=0.01,width=0.01]
-dot32[label="",shape=circle,style="",height=0.01,width=0.01]
-dot33[label="",shape=circle,style="",height=0.01,width=0.01]
-dot34[label="",shape=circle,style="",height=0.01,width=0.01]
-dot35[label="",shape=circle,style="",height=0.01,width=0.01]
-dot36[label="",shape=circle,style="",height=0.01,width=0.01]
-dot37[label="",shape=circle,style="",height=0.01,width=0.01]
-dot38[label="",shape=circle,style="",height=0.01,width=0.01]
-dot39[label="",shape=circle,style="",height=0.01,width=0.01]
-dot310[label="",shape=circle,style="",height=0.01,width=0.01]
-dot311[label="",shape=circle,style="",height=0.01,width=0.01]
-dot312[label="",shape=circle,style="",height=0.01,width=0.01]
+c3 [label=" <s1>x \> 0 | <s2> x \< 0 "];
+c4 [label=" <s1>y \> 0 | <s2> y \< 0 "];
+c5 [label=" <s1>z \> 0 | <s2> z \< 0 "];
+ 
+c2->c3
+c2->c4
+c2->c5
 
+result [label = "<d1>Do|<d2>Re|<d3>Mi|<d4>Fa|<d5>So|<d6>La|<d7>Si|<d8>Blank"]
 
-input->acc
-
-acc->dot12[dir=none]
-
-{rank=same;dot13->dot12->dot11[dir=none]}
-
-dot11->dot22[dir=none]
-dot13->dot25[dir=none]
 
 {
-rank=same;
-dot21->dot22->dot23
-dot24->dot25->dot26
-}
+	edge[dir=none]
 
-dot21->dot32
-dot23->dot35
-dot24->dot38
-dot26->dot311
+	{c3:s1,c4:s1,c5:s1}->result:d1;
+	{c3:s1,c4:s2,c5:s1}->result:d2;
+	{c3:s2,c4:s1,c5:s1}->result:d3;
+	{c3:s2,c4:s2,c5:s1}->result:d4;
+	{c3:s1,c4:s1,c5:s2}->result:d5;
+	{c3:s1,c4:s2,c5:s2}->result:d6;
+	{c3:s2,c4:s1,c5:s2}->result:d7;
+	{c3:s2,c4:s2,c5:s2}->result:d8;
+	}
 
-{
-	rank=same
-	dot31->dot32->dot33
-	dot34->dot35->dot36
-	dot37->dot38->dot39
-	dot310->dot311->dot312
-}
-
-dot31->result1
-dot33->result2
-dot34->result3
-dot36->result4
-dot37->result5
-dot39->result6
-dot310->result7
-dot312->result8
-
-
-result1[label="Do",shape=box]
-result2[label="Re",shape=box]
-result3[label="Do",shape=box]
-result4[label="Do",shape=box]
-result5[label="Do",shape=box]
-result6[label="Do",shape=box]
-result7[label="Do",shape=box]
-result8[label="Do",shape=box]
 
 
 }

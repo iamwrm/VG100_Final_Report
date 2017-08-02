@@ -10,9 +10,9 @@ digraph {
 // label="Flow chart of the Index Script"
 n1[label="Application Start",shape="box", style=""]
 n2[label="Configuration: \nAudio sources \nHardware access \nMemory allocation",shape="box", style=""]
-n21[label="",shape="point", style=""]
+n21[label="",shape="circle", style="",width=0.01,height=0.01]
 n3[label="Create either \nMatcher or Scaler \nSound track",shape="box", style=""]
-n31[label="",shape="point",style=""]
+n31[label="",shape=circle,style="",width=0.01,height=0.01]
 n4[label="\"Start\" Pressed",shape="diamond", style=""]
 n5[label="Recording \nAcceleration data",shape="box", style=""]
 n6[label="\"End\" Pressed",shape="box", style=""]
@@ -24,10 +24,10 @@ n11[label="Play Music",shape="box", style=""]
 
 n1->n2
 
-n2->n21
+n2->n21[dir=none]
 n21->n3
 
-n3->n31
+n3->n31[dir=none]
 n31->n4
 
 n4->n5[label="Yes"]
