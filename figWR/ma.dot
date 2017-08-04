@@ -35,7 +35,7 @@ c2->c3
 c2->c4
 c2->c5
 
-result [label = "<d1>Do|<d2>Re|<d3>Mi|<d4>Fa|<d5>So|<d6>La|<d7>Si|<d8>Blank"]
+result [label = "<d1>Do|<d2>Re|<d3>Mi|<d4>Fa|<d5>So|<d6>La|<d7>Ti|<d8>Blank"]
 
 
 {
