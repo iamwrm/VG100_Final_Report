@@ -7,5 +7,6 @@ all:
 	mv figWR/sc.dot.pdf figWR/sc.pdf
 	xelatex finalReport
 	xelatex finalReport
+	cp /Users/wangren/Documents/Github/VG100_Final_Report/finalReport.pdf /Users/wangren/Documents/Nutstore/Wang
 	(rm -rf *.ps *.log *.dvi *.aux *.*% *.lof *.lop *.lot *.toc *.idx *.ilg *.ind *.bbl *blg *.el *.out auto/)
 	open finalReport.pdf
