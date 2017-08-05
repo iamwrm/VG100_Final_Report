@@ -6,6 +6,7 @@
     "widthOfMatcherFigure")
    (LaTeX-add-labels
     "indexScript"
+    "FlowMatcher"
     "scalerStep0"
     "scalerStep1"
     "scalerStep2"

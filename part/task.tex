@@ -1,12 +1,48 @@
 \section{Tasks}
+
 \subsection{General Tasks}
+
 \subsubsection{Collecting and recording audio source}
-In order to collect all kinds of audio source, we search the Internet to find some short music with strong rhythm and can be looped. Since we have several modes, different types of music may be useful. Moreover, we use the software Garageband which consists of hundreds of audio source that we need. We record each element we need in the software and then save them for future use.
+
+In order to collect all kinds of audio source, we search the Internet to find
+some short music with strong rhythm and can be looped. Since we have several
+modes, different types of music may be useful. Moreover, we use the software
+Garageband which consists of hundreds of audio source that we need. We record
+each element we need in the software and then save them for future use. 
+
 \subsubsection{Combine each audio source in a harmonic way}
-Base on the theory of music such as the modal theory, we develop an algorithm that can generate each audio source in a relatively harmonic way. Since it won’t change the fact that if your motion is random and your music will also be random, we can only try to reduce the effect of this problem. And further development are still need in the future. 
+
+Base on the theory of music such as the modal theory, we develop an algorithm
+that can generate each audio source in a relatively harmonic way. Since it won’t
+change the fact that if your motion is random and your music will also be
+random, we can only try to reduce the effect of this problem. And further
+development are still need in the future.  
+
 \subsection{Mobile Terminal Tasks}
+
 \subsubsection{Call the inner sensor in the iPhone}
+
+The function of calling the sensor of iPhone has already been natively built.
+We include a library and call a line of system function to get the sensor data,
+which is in the form of 3-dimension vector.
+The vector is preceessed later by separating its component in each direction.
+
+
 \subsubsection{Call the speaker and flash light in the iPhone}
+
+We use a group of Game Object which is designed to get access to cellphone's
+hardware to call the speaker.
+The object is very flexible, for we can change its volume, its source clip
+easliy. 
+We use Vufuria library (Widedly used in augmented reality field) to get easy
+access to the flash light of iPhone.
+
 \subsection{PC Terminal Tasks}
-	\subsubsection{Learn to transfer data from the sensor to the computer by bluetooth}
-	First we need to learn the C language, which is used on the Unity platform. Then search for information of serial port communication under the background of C. 
+
+\subsubsection{Learn to transfer data from the sensor to the computer by
+  bluetooth} 
+
+First we need to learn the C\# language, which is used on the Unity platform.
+Then search for information of serial port communication under the background of
+C\#. 
+

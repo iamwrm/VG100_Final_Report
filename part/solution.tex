@@ -55,18 +55,15 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
 
 \subsubsection{Scaler algorithm}
 
-   For the \textbf{Scaler} part, also suppose we have the acceleration data.
-   Then we separate them into 10 time intervals equally.
-   And we find the max value in each interval.
-   Then the ruler is created based on the max value and the min value of the
-   acceleration data.
-   The ruler create 7 blanks vertically for there is 7 tones in one music
-   period, which are ``do re mi fa so la si''.
-   Fill in the blank and finally a music score is created and it produces one
-   sound track.
+For the \textbf{Scaler} part, also suppose we have the acceleration data. Then
+we separate them into 10 time intervals equally. And we find the max value in
+each interval. Then the ruler is created based on the max value and the min
+value of the acceleration data. The ruler create 7 blanks vertically for there
+is 7 tones in one music period, which are ``do re mi fa so la ti''. Fill in the
+blank and finally a music score is created and it produces one sound track. 
 
-   The visual of the \textbf{Scaler} process is shown by step in
-   Figure~\ref{scalerStep0} to Figure~\ref{scalerStep2}.  
+The visual of the \textbf{Scaler} process is shown by step in
+Figure~\ref{scalerStep0} to Figure~\ref{scalerStep2}. 
 
 \begin{figure}[H]
 \centering
@@ -95,17 +92,17 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
 
 \subsubsection{Matcher algorithm}
 
-   For the \textbf{Matcher} part, suppose we have the acceleration data,
-   then we compared it with three pre-configured answers,
-   calculate the difference between answers and real data.
-   The one that has the least sum of absolute value is the audio clip we select.
-   Then the corresponding sound track is created.
+For the \textbf{Matcher} part, suppose we have the acceleration data, then we
+compared it with three pre-configured answers, calculate the difference between
+answers and real data. The one that has the least sum of absolute value is the
+audio clip we select. Then the corresponding sound track is created. 
 
-   The visual of the \textbf{Matcher} process is shown in
-   Figure~\ref{matcherStep0} and Figure~\ref{matcherStep1}. 
+The visual of the \textbf{Matcher} process is shown in Figure~\ref{matcherStep0}
+and Figure~\ref{matcherStep1}.
 
 
 \newcommand{\widthOfMatcherFigure}{10cm}
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=\widthOfMatcherFigure]{figWR/matcher1}
@@ -122,8 +119,8 @@ The flow chart of the index script is shown in Figure~\ref{indexScript}.
 
 \subsubsection{Mixer}
 
-   After we have multiple sound tracks through either of the previous process,
-   we mix them together and create the final audio. Feel free to play it.
+After we have multiple sound tracks through either of the previous process, we
+mix them together and create the final audio. Feel free to play it. 
 
 \subsection{PC Terminal}
 
@@ -179,6 +176,14 @@ ensure the normal work of our product.
 
 
 \paragraph{Fabrication}
+
+We totally use two 3.3 V batteries to power both the bluetooth module and the
+sensor. The reason why we don’t use one battery to power the device is that the
+voltage is too small and can not last long. The assembling detail is that, the
+positive side connects with the VCC port and the negative side connects with GND
+port. The communication between the sensor and the bluetooth is realized by the
+connection of RX ports and TX ports.  
+
 \subsubsection{Software}
 \paragraph{Data collection algorithm (same with the Mobile terminal part)}
 \paragraph{Data transmission algorithm}
@@ -188,35 +193,38 @@ Programming Language: C\#
 Input: All kinds of data collected by the sensor JY901, including acceleration,
 angular acceleration, temperature and so on in 16 hexadecimal.   
 
- Output: Acceleration readings of three axises in 10 hexadecimal. 
+Output: Acceleration readings of three axises in 10 hexadecimal. 
 
- Algorithm: The algorithm includes mainly two functions which are''
- ``ReceiveData()'' and'' ``ReadData()'' and they each has their own thread. In
- the initialization part “void Update()” function, we create and open two
- threads one by one which can ensure that the data path is clear and efficient.
+Algorithm: The algorithm includes mainly two functions which are''
+``ReceiveData()'' and'' ``ReadData()'' and they each has their own thread. In
+the initialization part “void Update()” function, we create and open two threads
+one by one which can ensure that the data path is clear and efficient. 
 
- Then in function ``ReceiveData()'', an empty string and a buffer byte are
- created to store and transport the data collected. Since the “55” in 16
- hexadecimal equals to “85” in 10 hexadecimal and all the data we need starts
- with “55” in 16 hexadecimal, the “if” sentences are applied. After all the
- suitable datas have been collected, we add the string to the queue created as a
- data pool using the order “queueDataPool.Enqueue(string)”. 
+Then in function ``ReceiveData()'', an empty string and a buffer byte are
+created to store and transport the data collected. Since the “55” in 16
+hexadecimal equals to “85” in 10 hexadecimal and all the data we need starts
+with “55” in 16 hexadecimal, the “if” sentences are applied. After all the
+suitable data have been collected, we add the string to the queue created as a
+data pool using the order “queueDataPool.Enqueue(string)”. 
 
- In function ``ReadData()'', we first use the thread different from the previous
- one. All the data source in the part are from the queue acting as data pool.
- Here another buffer is created to store the data read out of the queue. We read
- data out one by one, when the length of the buffer reaches 22 which is the
- length we need, the buffer will be stored as formal data and then be cleared.
- Please note that since in the “ReceiveData” part we already judge what kind of
- data to collect, in the queue the data should starts with “85” in 10
- hexadecimal and we don’t need to set conditions again. Then there is the
- calculation part, take the data starts with “5551” in 16 hexadecimal as
- example. After “5551” the three axises accelerations are stored in two digits.
- The data format of the queue is “string”, so we need to transform data which is
- “string in 16 hexadecimal” to “int in 10 hexadecimal”. The function
- “Int16.Parse(stroutpool[4].ToString(),System.Globalization.NumberStyles.AllowHexSpecifier)” 
- is applied. Thus we can calculate the accelerations out one by one.  
+In function ``ReadData()'', we first use the thread different from the previous
+one. All the data source in the part are from the queue acting as data pool.
+Here another buffer is created to store the data read out of the queue. We read
+data out one by one, when the length of the buffer reaches 22 which is the
+length we need, the buffer will be stored as formal data and then be cleared.
+Please note that since in the “ReceiveData” part we already judge what kind of
+data to collect, in the queue the data should starts with “85” in 10 hexadecimal
+and we don’t need to set conditions again. Then there is the calculation part,
+take the data starts with “5551” in 16 hexadecimal as example. After “5551” the
+three axises accelerations are stored in two digits. The data format of the
+queue is “string”, so we need to transform data which is “string in 16
+hexadecimal” to “int in 10 hexadecimal”. The function
+“Int16.Parse(stroutpool[4].ToString(),System.Globalization.NumberStyles.AllowHexSpecifier)” 
+is applied. Thus we can calculate the accelerations out one by one.
+
 \paragraph{Data analysis algorithm (same with the Mobile terminal part)}
+
 \paragraph{Audio source generating algorithm (same with the Mobile terminal
   part)} 
-\subsubsection{Working Principles}
+
+%\subsubsection{Working Principles}
