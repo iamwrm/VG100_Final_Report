@@ -66,20 +66,22 @@ The visual of the \textbf{Scaler} process is shown by step in
 Figure~\ref{scalerStep0} to Figure~\ref{scalerStep2}. 
 
 \begin{figure}[H]
+\begin{minipage}[b]{0.5\linewidth}
 \centering
-\newcommand{\widthOfScalerStepFigure}{5cm}
-\includegraphics[width=\widthOfScalerStepFigure]{figWR/scaler0}
+\includegraphics[width=0.5\linewidth]{figWR/scaler0}
 \caption{Scaler Process, original data}
 \label{scalerStep0}
-\end{figure}
-
-\begin{figure}[H]
+\end{minipage}
+%
+\begin{minipage}[b]{0.5\linewidth}
 \centering
-\newcommand{\widthOfScalerStepFigure}{5cm}
-\includegraphics[width=\widthOfScalerStepFigure]{figWR/scaler1}
+\centering
+\includegraphics[width=0.5\linewidth]{figWR/scaler1}
 \caption{Scaler Process, split and create ruler}
 \label{scalerStep1}
+\end{minipage}
 \end{figure}
+
 
 \begin{figure}[H]
 \centering
@@ -101,7 +103,7 @@ The visual of the \textbf{Matcher} process is shown in Figure~\ref{matcherStep0}
 and Figure~\ref{matcherStep1}.
 
 
-\newcommand{\widthOfMatcherFigure}{10cm}
+\newcommand{\widthOfMatcherFigure}{9cm}
 
 \begin{figure}[H]
 \centering
@@ -151,6 +153,14 @@ acceleration, the angle of avertence and angular velocity. The sensor itself
 consists of three-axis gyroscope, three-axis acceleration sensors, three-axis
 digital compass and some other motion sensors. The sensor JY901 has the
 following characteristics: 
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{Pics/imu}
+\caption{JY901 Sensor}
+\label{matcherStep1}
+\end{figure}
 
 \begin{itemize}
 \item Flexible data outputting ports. (I2C, SPI, TTL are supported)
