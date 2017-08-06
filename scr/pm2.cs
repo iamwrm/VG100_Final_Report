@@ -1,15 +1,3 @@
-	if (GUI.Button(new Rect(600, 1050, 150, 150), "Change Scene to 1")) {
-		SceneManager.LoadScene(1); 
-	}
-	if (GUI.Button(new Rect(600, 1200, 150, 150), "Change Scene to 2")) {
-		SceneManager.LoadScene(2); 
-	}
-	for (int i = 0; i < 8; i++) {
-		if (GUI.Button(new Rect(60 * i, 650 + 50, 55, 80), (i).ToString())) {
-			musicScoreX.Add(i);
-		}
-	}
-	Vector3 nowDev = Input.acceleration - InitialGravityAccForX;
 	int aa, ab, ac;
 	aa = nowDev.x >= 0 ? 1 : 0;
 	ab = nowDev.y >= 0 ? 1 : 0;
