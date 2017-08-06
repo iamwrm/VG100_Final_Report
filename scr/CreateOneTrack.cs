@@ -42,3 +42,14 @@ void CreateOneTrack(AudioSource AudioSourceInputed,
 	}	
 	int PitchingControlx0 = 0;
 	int PitchingControly0 = StartY + 110;
+	if (GUI.Button(new Rect(PitchingControlx0, PitchingControly0,
+	 150, 50), "Toggle Pitching")) {
+		if (PitchingLocal == 0) {
+			PitchingLocal = 1;
+			AudioSourceInputed.loop = true;
+		}
+		else {
+			PitchingLocal = 0;
+			AudioSourceInputed.loop = false;
+		}
+	}	

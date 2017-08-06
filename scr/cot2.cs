@@ -1,14 +1,3 @@
-	if (GUI.Button(new Rect(PitchingControlx0, PitchingControly0,
-	 150, 50), "Toggle Pitching")) {
-		if (PitchingLocal == 0) {
-			PitchingLocal = 1;
-			AudioSourceInputed.loop = true;
-		}
-		else {
-			PitchingLocal = 0;
-			AudioSourceInputed.loop = false;
-		}
-	}
 	int PitchingSlidex0 = PitchingControlx0 + 200;
 	int PitchingSlidey0 = PitchingControly0 + 30;
 	if (PitchingLocal == 1) {
