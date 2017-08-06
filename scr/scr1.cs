@@ -1,29 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
-using System.Linq;
-using UnityEngine.SceneManagement;
-
-public class scr1 : MonoBehaviour
-{
-
-	public AudioSource audioSourceX; // sound track 1
-	public AudioSource audioSource1; // sound track 1
-	public AudioSource audioSource2; // sound track 2 
-	public AudioSource audioSource3; // sound track 3
+﻿
 
 
-	// ------------ Audio Source for Piano
 
-	public AudioClip blank;
-	public AudioClip p_01;
-	public AudioClip p_02;
-	public AudioClip p_03;
-	public AudioClip p_04;
-	public AudioClip p_05;
-	public AudioClip p_06;
-	public AudioClip p_07;
+	
 
 	// ------------ Audio Source for Violin
 	public AudioClip pv_01;
@@ -84,16 +63,7 @@ public class scr1 : MonoBehaviour
 	int Pitching2;
 	int Pitching3;
 
-	void Start()
-	{
-		AudioClipColletion.Add(blank);
-		AudioClipColletion.Add(p_01);
-		AudioClipColletion.Add(p_02);
-		AudioClipColletion.Add(p_03);
-		AudioClipColletion.Add(p_04);
-		AudioClipColletion.Add(p_05);
-		AudioClipColletion.Add(p_06);
-		AudioClipColletion.Add(p_07);
+	
 		// 7 sources
 		AudioClipColletion.Add(blank);
 		AudioClipColletion.Add(pv_01);
@@ -247,143 +217,8 @@ public class scr1 : MonoBehaviour
 
 	}
 
-	void CreateOneTrack(AudioSource AudioSourceInputed,
-						ref List<double> MusicScoreInputed,
-						int StartY,
-						ref int isAccRecordingLocal,
-						ref int InstrumentType,
-						ref int PitchingLocal)
-	{
 
-		ShowDouble(MusicScoreInputed, "SoureInputed: ", 0, 0 + StartY);
-
-		int x0 = 200;
-		int XGap = 150;
-		int YGap = 0;
-		int SizeX = 130;
-		int SizeY = 100;
-		if (GUI.Button(new Rect(x0 + 0, StartY, SizeX, SizeY), "Recorded"))
-		{
-			for (int i = 0; i < musicScoreX.Count; i++)
-			{
-				MusicScoreInputed.Add(musicScoreX[i]);
-			}
-			musicScoreX.Clear();
-			//CombineScore(MusicScoreInputed, AudioSourceInputed, InstrumentType);
-		}
-
-		if (GUI.Button(new Rect(x0 + XGap, StartY + YGap, SizeX, SizeY), "Play music"))
-		{
-
-			CombineScore(MusicScoreInputed, AudioSourceInputed, InstrumentType);
-			if (!AudioSourceInputed.isPlaying)
-			{
-				AudioSourceInputed.Play();
-			}
-		}
-
-		if (GUI.Button(new Rect(x0 + 2 * XGap, StartY + YGap, SizeX / 2, SizeY), "Clear"))
-		{
-			MusicScoreInputed.Clear();
-		}
-
-		int InstrumentControlx0 = 20;
-		int InstrumentControly0 = StartY + 20;
-		if (GUI.Button(new Rect(InstrumentControlx0, InstrumentControly0, SizeX / 3, SizeY - 30), "1"))
-		{
-			InstrumentType = 2;
-		}
-		if (GUI.Button(new Rect(InstrumentControlx0 + SizeX / 3 + 10, InstrumentControly0, SizeX / 3, SizeY - 30), "2"))
-		{
-			InstrumentType = 3;
-		}
-		if (GUI.Button(new Rect(InstrumentControlx0 + SizeX / 3 + 70, InstrumentControly0, SizeX / 3, SizeY - 30), "3"))
-		{
-			InstrumentType = 4;
-		}
-
-		int PitchingControlx0 = 0;
-		int PitchingControly0 = StartY + 110;
-		if (GUI.Button(new Rect(PitchingControlx0, PitchingControly0, 150, 50), "Toggle Pitching"))
-		{
-			if (PitchingLocal == 0)
-			{
-				PitchingLocal = 1;
-				AudioSourceInputed.loop = true;
-			}
-			else
-			{
-				PitchingLocal = 0;
-				AudioSourceInputed.loop = false;
-			}
-			Debug.Log(PitchingLocal);
-		}
-
-		int PitchingSlidex0 = PitchingControlx0 + 200;
-		int PitchingSlidey0 = PitchingControly0 + 30;
-		if (PitchingLocal == 1)
-		{
-			float musicPitch;
-			musicPitch = GUI.HorizontalSlider(new Rect(PitchingSlidex0, PitchingSlidey0, 300, 50),
-			(float)(System.Math.Pow(2.9, Input.acceleration.x)), 0.0F, 3.0F);
-			AudioSourceInputed.pitch = musicPitch;
-		}
-
-	}
-
-	public void CombineScore(List<double> MusicScoreInputed, AudioSource AudioSourceInThisFunction, int InstrumentType)
-	{
-		if (InstrumentType == 0)
-		{
-			Debug.Log("the Instrument Type input is 0 , it should begin from 1");
-		}
-		AudioClip tempc = new AudioClip();
-
-		for (int i = 0; i < MusicScoreInputed.Count; i++)
-		{
-			AudioClip clippp = AudioClipColletion[(int)(MusicScoreInputed[i]) + (InstrumentType - 1) * 8];
-			tempc = ACCombine(tempc, clippp);
-		}
-
-		AudioSourceInThisFunction.clip = tempc;
-
-	}
-	public static AudioClip ACCombine(params AudioClip[] clips)
-	{
-		if (clips == null || clips.Length == 0)
-			return null;
-
-		int length = 0;
-		for (int i = 0; i < clips.Length; i++)
-		{
-			if (clips[i] == null)
-				continue;
-
-			length += clips[i].samples * clips[i].channels;
-		}
-
-		float[] data = new float[length];
-		length = 0;
-		for (int i = 0; i < clips.Length; i++)
-		{
-			if (clips[i] == null)
-				continue;
-
-			float[] buffer = new float[clips[i].samples * clips[i].channels];
-			clips[i].GetData(buffer, 0);
-			//System.Buffer.BlockCopy(buffer, 0, data, length, buffer.Length);
-			buffer.CopyTo(data, length);
-			length += buffer.Length;
-		}
-
-		if (length == 0)
-			return null;
-
-		AudioClip result = AudioClip.Create("Combine", length / 2, 2, 44100, false, false);
-		result.SetData(data, 0);
-
-		return result;
-	}
+	
 	public static void ShowDouble(double InputValue, int xForLabel, int yForLabel)
 	{
 		string output = "";
