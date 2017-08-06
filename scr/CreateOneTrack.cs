@@ -1,8 +1,8 @@
 void CreateOneTrack(AudioSource AudioSourceInputed,
-					ref List<double> MusicScoreInputed,
-					int StartY, ref int isAccRecordingLocal,
-					ref int InstrumentType, ref int PitchingLocal)
-	{
+		ref List<double> MusicScoreInputed,
+		int StartY, ref int isAccRecordingLocal,
+		ref int InstrumentType, ref int PitchingLocal)
+{
 	ShowDouble(MusicScoreInputed, "SoureInputed: ", 0, 0 + StartY);
 	int x0 = 200;
 	int XGap = 150;
@@ -18,8 +18,7 @@ void CreateOneTrack(AudioSource AudioSourceInputed,
 	}
 	if (GUI.Button(new Rect(x0 + XGap, StartY + YGap, SizeX, SizeY), "Play music")) {
 		CombineScore(MusicScoreInputed, AudioSourceInputed, InstrumentType);
-		if (!AudioSourceInputed.isPlaying)
-		{
+		if (!AudioSourceInputed.isPlaying){
 			AudioSourceInputed.Play();
 		}
 	}
